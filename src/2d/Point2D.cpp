@@ -7,7 +7,11 @@
 namespace geomlib
 {
 
-    Point2D::Point2D( double x, double y ) : m_X( x ), m_Y( y ) {}
+    Point2D::Point2D( double x, double y ) :
+        m_X{ x },
+        m_Y{ y }
+    {
+    }
 
     double Point2D::distanceTo( const Point2D &other ) const
     {

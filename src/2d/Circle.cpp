@@ -5,10 +5,11 @@
 
 namespace geomlib
 {
-    Circle::Circle( Point2D center, double radius )
-    : m_Radius{ radius },
-    m_Center{ std::move( center ) }
-    {}
+    Circle::Circle( Point2D center, double radius ) :
+        m_Radius{ radius },
+        m_Center{ std::move( center ) }
+    {
+    }
 
     double Circle::area() const
     {

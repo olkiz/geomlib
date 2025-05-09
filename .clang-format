@@ -1,15 +1,13 @@
 UseTab: Never
 BasedOnStyle: Google
 SpaceBeforeRangeBasedForLoopColon: true
-AlignConsecutiveDeclarations: true
-SpacesBeforeTrailingComments: 1
+AlignConsecutiveDeclarations: false
 PackConstructorInitializers: Never
 IndentCaseLabels: true
 NamespaceIndentation: All
 IndentWidth: 4
 Standard: c++20
-AlignAfterOpenBracket: Align
-SpaceBeforeParens: true
+AlignAfterOpenBracket: DontAlign
 BreakConstructorInitializers: AfterColon
 SpacesInParentheses: true
 Cpp11BracedListStyle: false
@@ -28,3 +26,6 @@ AllowShortFunctionsOnASingleLine: Empty
 SortIncludes: false
 SpaceAfterCStyleCast: true
 SpaceInEmptyParentheses: false
+AttributeMacros: []
+SpaceBeforeParens: ControlStatements
+SpacesBeforeTrailingComments: 1

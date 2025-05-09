@@ -15,13 +15,13 @@ namespace geomlib
        public:
         Circle( Point2D center = {}, double radius = 0.0 );
 
-        [[nodiscard]] double      area() const;
-        [[nodiscard]] double      perimeter() const;
+        [[nodiscard]] double area() const;
+        [[nodiscard]] double perimeter() const;
         [[nodiscard]] std::string type() const override;
 
        private:
         Point2D m_Center;
-        double  m_Radius;
+        double m_Radius;
     };
 } // namespace geomlib
 

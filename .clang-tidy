@@ -1,0 +1,33 @@
+Checks: >
+  bugprone-*,
+  performance-*,
+  modernize-*,
+  readability-*,
+  cppcoreguidelines-*,
+  misc-*,
+  portability-*,
+  clang-analyzer-*,
+  -modernize-use-trailing-return-type,
+  -modernize-pass-by-value
+
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+FormatStyle: file
+
+CheckOptions:
+  - key:             modernize-use-nullptr.NullMacros
+    value:           'NULL'
+  - key:             modernize-loop-convert.MinConfidence
+    value:           reasonable
+  - key:             modernize-use-override.IncludeCXX20
+    value:           '1'
+  - key:             modernize-concat-nested-namespaces.ShortNamespaceLines
+    value:           '1'
+  - key:             readability-function-cognitive-complexity.Threshold
+    value:           '25'
+  - key:             performance-unnecessary-value-param.AllowedTypes
+    value:           'std::string'
+  - key:             cppcoreguidelines-avoid-magic-numbers.IgnoredValues
+    value:           '0,1,2,3,4'
+  - key:             cppcoreguidelines-avoid-magic-numbers.IgnoreEnums
+    value:           '1'

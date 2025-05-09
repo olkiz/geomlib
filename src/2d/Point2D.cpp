@@ -3,10 +3,11 @@
 // STL libs
 #include <cmath>
 #include <format>
+#include <string>
 
 namespace geomlib
 {
-
+    // NOLINTNEXTLINE(bugprone-easily-swappable-parameters, readability-identifier-length)
     Point2D::Point2D( double x, double y ) :
         m_X{ x },
         m_Y{ y }
@@ -15,9 +16,9 @@ namespace geomlib
 
     double Point2D::distanceTo( const Point2D &other ) const
     {
-        double dx = m_X - other.m_X;
-        double dy = m_Y - other.m_Y;
-        return std::sqrt( dx * dx + dy * dy );
+        const double DELTA_X = m_X - other.m_X;
+        const double DELTA_Y = m_Y - other.m_Y;
+        return std::sqrt( ( DELTA_X * DELTA_X ) + ( DELTA_Y * DELTA_Y ) );
     }
 
     bool Point2D::operator==( const Point2D &other ) const
@@ -28,11 +29,12 @@ namespace geomlib
     double Point2D::x() const
     {
         return m_X;
-    };
+    }
+
     double Point2D::y() const
     {
         return m_Y;
-    };
+    }
 
     std::string Point2D::type() const
     {

@@ -1,14 +1,24 @@
 #ifndef SHAPE_H
 #define SHAPE_H
 
+#include <string>
+
 namespace geomlib
 {
     class GeometryObject
     {
        public:
+        GeometryObject() = default;
+
         virtual ~GeometryObject() = default;
 
-        virtual std::string type() const = 0;
+        GeometryObject( const GeometryObject& other ) = default;
+        GeometryObject( GeometryObject&& other )      = default;
+
+        GeometryObject& operator=( const GeometryObject& other ) = default;
+        GeometryObject& operator=( GeometryObject&& other )      = default;
+
+        [[nodiscard]] virtual std::string type() const = 0;
     };
 } // namespace geomlib
 

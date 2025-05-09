@@ -13,11 +13,11 @@ namespace geomlib
     class Circle : public GeometryObject
     {
        public:
-        Circle( Point2D center, double radius );
+        Circle( Point2D center = {}, double radius = 0.0 );
 
-        double      area() const;
-        double      perimeter() const;
-        std::string type() const override;
+        [[nodiscard]] double      area() const;
+        [[nodiscard]] double      perimeter() const;
+        [[nodiscard]] std::string type() const override;
 
        private:
         Point2D m_Center;

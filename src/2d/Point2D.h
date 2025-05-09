@@ -25,7 +25,8 @@ namespace geomlib
         [[nodiscard]] std::string type() const override;
 
        private:
-        double m_X, m_Y;
+        double m_X;
+        double m_Y;
     };
 } // namespace geomlib
 

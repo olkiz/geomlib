@@ -5,10 +5,8 @@ Modern C++23 library for 2D and 3D computational geometry, designed for mapping,
 
 ### Key features:
 
-* Core types: Point2D, Point3D, Line, Polygon, BoundingBox
+* Core types: Point, LineString
 * Geometry operations: distance, intersection, containment
-* Spatial indexing structures (R-Tree, QuadTree — optional)
-* Extensible for GIS, robotics, and embedded applications
 
 ## Build
 ### Clang Linux:

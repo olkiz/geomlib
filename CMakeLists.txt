@@ -20,11 +20,10 @@ endif()
 
 # Sources for the library
 set(GEOMLIB_SOURCES
-        src/2d/GeometryObject.h
-        src/2d/Point2D.h
-        src/2d/Circle.h
-        src/2d/Circle.cpp
-        src/2d/Point2D.cpp
+        include/geomlib/GeometryObject.h
+        include/geomlib/Point.h
+        include/geomlib/LineString.h
+        include/geomlib/Arithmetic.h
 )
 
 # Create library target
@@ -33,14 +32,14 @@ set_target_properties(geomlib PROPERTIES LINKER_LANGUAGE CXX)
 
 target_include_directories(geomlib
         PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
 
 # Tests
 if(BUILD_TESTING)
     enable_testing()
     set(GEOMLIB_TESTS
-            tests/2d/Point2D_test.cpp
+            tests/geomlib/Point_test.cpp
     )
 
     add_executable(geomlib_tests ${GEOMLIB_TESTS})

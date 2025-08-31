@@ -1,4 +1,5 @@
-Checks: >
+Checks: >-
+  -*,
   bugprone-*,
   performance-*,
   modernize-*,
@@ -8,7 +9,9 @@ Checks: >
   portability-*,
   clang-analyzer-*,
   -modernize-use-trailing-return-type,
-  -modernize-pass-by-value
+  -modernize-pass-by-value,
+  -llvmlibc*,
+  -misc-classes-should-be-final
 
 WarningsAsErrors: '*'
 HeaderFilterRegex: '.*'

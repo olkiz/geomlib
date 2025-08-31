@@ -11,7 +11,7 @@ AlignAfterOpenBracket: DontAlign
 BreakConstructorInitializers: AfterColon
 SpacesInParentheses: true
 Cpp11BracedListStyle: false
-SpacesInAngles: true
+SpacesInAngles: false
 AllowShortIfStatementsOnASingleLine: false
 TabWidth: 4
 BreakBeforeBraces: Allman

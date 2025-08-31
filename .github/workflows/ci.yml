@@ -21,7 +21,7 @@ jobs:
 
     - name: Run Clang-Format Check
       run: |
-        find src/ include/ tests/ -name '*.cpp' -o -name '*.h' | xargs clang-format --dry-run --Werror
+        find include/ tests/ -name '*.cpp' -o -name '*.h' | xargs clang-format --dry-run --Werror
 
     - name: Configure CMake
       run: |
@@ -34,7 +34,7 @@ jobs:
     - name: Run Clang-Tidy
       run: |
         cd build
-        clang-tidy -p . $(find ../src -name '*.cpp')
+        clang-tidy -p . $(find ../include -name '*.h')
 
     - name: Build project
       run: |

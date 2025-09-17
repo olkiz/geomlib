@@ -3,7 +3,6 @@
 
 // STL libs
 #include <cmath>
-#include <format>
 #include <string>
 
 // geomlib

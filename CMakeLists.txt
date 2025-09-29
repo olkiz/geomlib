@@ -24,6 +24,7 @@ set(GEOMLIB_SOURCES
         include/geomlib/Point.h
         include/geomlib/LineString.h
         include/geomlib/Arithmetic.h
+        include/geomlib/Utils.h
 )
 
 # Create library target

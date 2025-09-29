@@ -1,5 +1,4 @@
-#ifndef POINT2D_H
-#define POINT2D_H
+#pragma once
 
 // STL libs
 #include <cmath>
@@ -8,6 +7,7 @@
 // geomlib
 #include "Arithmetic.h"
 #include "GeometryObject.h"
+#include "Utils.h"
 
 namespace geomlib
 {
@@ -35,9 +35,9 @@ namespace geomlib
             return std::sqrt( ( DELTA_X * DELTA_X ) + ( DELTA_Y * DELTA_Y ) );
         }
 
-        [[nodiscard]] auto operator==( const Point& other ) const
+        [[nodiscard]] auto operator==( const Point<T>& other ) const
         {
-            return m_X == other.m_X && m_Y == other.m_Y;
+            return is_equal<T>( m_X, other.m_X ) && is_equal<T>( m_Y, other.m_Y );
         }
 
         [[nodiscard]] auto x() const
@@ -60,5 +60,3 @@ namespace geomlib
         T m_Y;
     };
 } // namespace geomlib
-
-#endif // POINT2D_H

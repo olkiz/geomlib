@@ -1,5 +1,4 @@
-#ifndef GEOMLIB_LINE_H
-#define GEOMLIB_LINE_H
+#pragma once
 
 // STL libs
 #include <string>
@@ -37,5 +36,3 @@ namespace geomlib
         std::vector<Point<T>> m_Points;
     };
 } // namespace geomlib
-
-#endif // GEOMLIB_LINE_H

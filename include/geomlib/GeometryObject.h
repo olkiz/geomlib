@@ -1,6 +1,4 @@
-#ifndef SHAPE_H
-#define SHAPE_H
-
+#pragma once
 #include <string>
 
 namespace geomlib
@@ -21,5 +19,3 @@ namespace geomlib
         [[nodiscard]] virtual std::string type() const = 0;
     };
 } // namespace geomlib
-
-#endif // SHAPE_H

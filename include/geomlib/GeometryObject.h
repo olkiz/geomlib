@@ -15,7 +15,5 @@ namespace geomlib
 
         GeometryObject& operator=( const GeometryObject& other ) = default;
         GeometryObject& operator=( GeometryObject&& other )      = default;
-
-        [[nodiscard]] virtual std::string type() const = 0;
     };
 } // namespace geomlib

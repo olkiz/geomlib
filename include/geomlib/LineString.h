@@ -27,11 +27,6 @@ namespace geomlib
                    std::equal( m_Points.begin(), m_Points.end(), other.m_Points.begin() );
         }
 
-        [[nodiscard]] std::string type() const override
-        {
-            return "LineString";
-        }
-
        private:
         std::vector<Point<T>> m_Points;
     };

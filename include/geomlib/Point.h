@@ -50,11 +50,6 @@ namespace geomlib
             return m_Y;
         }
 
-        [[nodiscard]] std::string type() const override
-        {
-            return "Point";
-        }
-
        private:
         T m_X;
         T m_Y;

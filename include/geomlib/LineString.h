@@ -1,7 +1,6 @@
 #pragma once
 
 // STL libs
-#include <string>
 #include <vector>
 
 // geomlib

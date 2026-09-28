@@ -2,7 +2,6 @@
 
 // STL libs
 #include <cmath>
-#include <string>
 
 // geomlib
 #include "Arithmetic.h"

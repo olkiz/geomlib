@@ -26,6 +26,21 @@ namespace geomlib
                    std::equal( m_Points.begin(), m_Points.end(), other.m_Points.begin() );
         }
 
+        [[nodiscard]] T length() const
+        {
+            T result = 0;
+            if ( m_Points.size() < 2 )
+            {
+                return result;
+            }
+
+            for ( size_t i = 0; i < m_Points.size() - 1; ++i )
+            {
+                result += m_Points[ i ].distanceTo( m_Points[ i + 1 ] );
+            }
+            return result;
+        }
+
        private:
         std::vector<Point<T>> m_Points;
     };

@@ -22,7 +22,7 @@ namespace geomlib
 
         bool operator==( const LineString<T>& other ) const
         {
-            return m_Points.size() != other.m_Points.size() &&
+            return m_Points.size() == other.m_Points.size() &&
                    std::equal( m_Points.begin(), m_Points.end(), other.m_Points.begin() );
         }
 

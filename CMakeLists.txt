@@ -41,6 +41,7 @@ if(BUILD_TESTING)
     enable_testing()
     set(GEOMLIB_TESTS
             tests/geomlib/Point_test.cpp
+            tests/geomlib/LineString_test.cpp
     )
 
     add_executable(geomlib_tests ${GEOMLIB_TESTS})

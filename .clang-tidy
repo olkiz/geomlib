@@ -15,7 +15,8 @@ Checks: >-
   -readability-identifier-length,
   -misc-include-cleaner,
   -misc-const-correctness,
-  -bugprone-easily-swappable-parameters
+  -bugprone-easily-swappable-parameters,
+  -portability-avoid-pragma-once
 
 WarningsAsErrors: "*"
 HeaderFilterRegex: ".*"

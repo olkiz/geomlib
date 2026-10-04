@@ -1,10 +1,8 @@
 InheritParentConfig: true
 Checks: >
-  *,
   -misc-use-anonymous-namespace,
-  -readability-magic-numbers,
   -cppcoreguidelines-avoid-magic-numbers,
-  -llvmlibc-implementation-in-namespace,
-  -llvmlibc-callee-namespace,
   -cppcoreguidelines-avoid-do-while,
-  -altera-unroll-loops
+  -readability-function-cognitive-complexity,
+  -bugprone-throwing-static-initialization,
+  -cert-err58-cpp

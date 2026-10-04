@@ -1,5 +1,8 @@
 name: CI
 
+env:
+  CLANG_TIDY_VER: 22
+
 on:
   push:
     branches: ["master"]
@@ -8,7 +11,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout code
@@ -17,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y clang-tidy clang-format clang cmake ninja-build g++ gcc
+          sudo apt-get install -y clang-tidy-$CLANG_TIDY_VER clang-format clang cmake ninja-build g++ gcc
 
       - name: Run Clang-Format Check
         run: |
@@ -35,8 +38,7 @@ jobs:
           clang-tidy --verify-config
       - name: Run Clang-Tidy
         run: |
-          cd build
-          clang-tidy -p . $(find ../include -name '*.h')
+          clang-tidy-$CLANG_TIDY_VER -p build --header-filter='include/geomlib/.*' tests/geomlib/*.cpp
 
       - name: Build project
         run: |

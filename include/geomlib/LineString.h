@@ -1,13 +1,16 @@
 #pragma once
 
 // STL libs
+#include <algorithm>
 #include <cstddef>
+#include <functional>
+#include <ranges>
 #include <vector>
 
 // geomlib
+#include "Arithmetic.h"
 #include "GeometryObject.h"
 #include "Point.h"
-#include "Arithmetic.h"
 
 namespace geomlib
 {
@@ -21,25 +24,19 @@ namespace geomlib
         {
         }
 
-        bool operator==( const LineString<T>& other ) const
+        auto operator==( const LineString<T>& other ) const
         {
             return m_Points.size() == other.m_Points.size() &&
                    std::equal( m_Points.begin(), m_Points.end(), other.m_Points.begin() );
         }
 
-        [[nodiscard]] T length() const
+        [[nodiscard]] auto length() const
         {
-            T result = 0;
-            if ( m_Points.size() < 2 )
-            {
-                return result;
-            }
+            auto segmentLengths = m_Points | std::views::pairwise_transform( []( const auto& first, const auto& second )
+                                                 { return first.distanceTo( second ); } );
 
-            for ( size_t i = 0; i < m_Points.size() - 1; ++i )
-            {
-                result += m_Points[ i ].distanceTo( m_Points[ i + 1 ] );
-            }
-            return result;
+            using Result = std::ranges::range_value_t<decltype( segmentLengths )>;
+            return std::ranges::fold_left( segmentLengths, Result{}, std::plus{} );
         }
 
        private:
